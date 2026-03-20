@@ -76,16 +76,46 @@ function App() {
       ]
     },
     {
-      company: "Teaching Experience",
+      company: "Yeo Chei Man Senior Secondary School 啬色園主辦可道中學",
       period: "Sep 2005 – Aug 2011",
       roles: [
         {
-          title: "Yeo Chei Man Senior Secondary School",
+          title: "Teacher",
           period: "Sep 2005 – Aug 2011",
           points: [
             "Taught F.4 & F.5 Mathematics; Drama module for F.5 Chinese Language",
-            "Advisor of Drama Club, Class Tutor; Head of SLP (09–10), Deputy Head of OLE (08–09)",
-            "Designed curriculum materials making complex concepts accessible"
+            "Advisor of Drama Club, Class Tutor; Head of Student Leadership Programme (09–10)",
+            "Deputy Head of Other Learning Experience (08–09); Designed curriculum materials"
+          ]
+        }
+      ]
+    },
+    {
+      company: "Buddhist Ho Nam Kam College 佛教南蓮中學",
+      period: "Sep 2003 – Aug 2005",
+      roles: [
+        {
+          title: "Graduate Master / Subject Teacher",
+          period: "Sep 2003 – Aug 2005",
+          points: [
+            "Taught F.5 Mathematics & Additional Mathematics; Computer Literacy Teacher",
+            "Extra-Curricular Activities Coordinator; Class Teacher (F.5S)",
+            "Organized and supervised student activities and events"
+          ]
+        }
+      ]
+    },
+    {
+      company: "Other Education Roles 其他教育工作",
+      period: "2002 – 2005",
+      roles: [
+        {
+          title: "Part-time Tutor / Teaching Assistant",
+          period: "Various",
+          points: [
+            "Tutorial classes for HKCEE and HKALE students (Mathematics)",
+            "Part-time teaching at HKU Space (Computing)",
+            "Private tutoring in Mathematics and Computer Studies"
           ]
         }
       ]
