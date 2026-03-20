@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
 import { 
   MapPin, Mail, ExternalLink, Github, 
   Code2, Lightbulb, Rocket, Briefcase, GraduationCap,
