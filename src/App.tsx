@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { 
-  MapPin, Mail, ExternalLink, Github, Linkedin, 
+  MapPin, Mail, ExternalLink, Github, 
   Code2, Lightbulb, Rocket, Briefcase, GraduationCap,
   ChevronDown, Download, Sparkles, Settings
 } from 'lucide-react'
@@ -81,11 +81,11 @@ function App() {
 
   return (
     <div className="app">
-      {/* Admin Link */}
-      <Link to="/admin" className="admin-link">
+      {/* Admin Link - Hidden for public view, access via /admin directly */}
+      {/* <Link to="/admin" className="admin-link">
         <Settings size={18} />
         <span>Admin</span>
-      </Link>
+      </Link> */}
 
       {/* Hero Section */}
       <section className="hero">
@@ -110,10 +110,7 @@ function App() {
               <Github size={18} />
               <a href="https://github.com/Phaapnag" target="_blank" rel="noopener noreferrer">github.com/Phaapnag</a>
             </div>
-            <div className="info-item">
-              <Linkedin size={18} />
-              <a href="https://linkedin.com/in/wongwaihang" target="_blank" rel="noopener noreferrer">linkedin.com/in/wongwaihang</a>
-            </div>
+            {/* LinkedIn removed - can add back if needed */}
           </div>
         </div>
         <div className="hero-decoration">
