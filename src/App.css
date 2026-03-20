@@ -54,7 +54,7 @@ a:hover {
   padding: 0 24px;
 }
 
-/* Sticky Menu Button */
+/* Sticky Menu Button - Gradient style */
 .menu-button {
   position: fixed;
   top: 16px;
@@ -63,37 +63,54 @@ a:hover {
   width: 44px;
   height: 44px;
   border: none;
-  border-radius: 12px;
-  background: var(--primary);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--cta), var(--accent-3));
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s;
 }
 
 .menu-button:hover {
-  background: var(--secondary);
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
 }
 
-/* Menu Dropdown */
+/* Menu Dropdown - Frosted glass effect */
 .menu-dropdown {
   position: fixed;
   top: 70px;
   right: 16px;
   z-index: 999;
-  background: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   overflow: hidden;
-  min-width: 160px;
+  min-width: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: menuSlideIn 0.2s ease-out;
+}
+
+@keyframes menuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .menu-dropdown button {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   width: 100%;
   padding: 14px 20px;
   border: none;
@@ -101,17 +118,37 @@ a:hover {
   color: var(--text);
   font-size: 15px;
   font-family: var(--font-body);
+  font-weight: 500;
   text-align: left;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.menu-dropdown button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: linear-gradient(180deg, var(--cta), var(--accent-3));
+  border-radius: 0 2px 2px 0;
+  transition: height 0.2s ease;
 }
 
 .menu-dropdown button:hover {
-  background: var(--bg);
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.08), transparent);
+  padding-left: 28px;
+}
+
+.menu-dropdown button:hover::before {
+  height: 24px;
 }
 
 .menu-dropdown button:not(:last-child) {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Hero Section - Compact version */

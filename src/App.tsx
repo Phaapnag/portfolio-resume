@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { 
   MapPin, Mail, ExternalLink, Github, 
   Code2, Lightbulb, Rocket, Briefcase, GraduationCap,
-  ChevronDown, Download, Sparkles
+  ChevronDown, Download, Sparkles, Menu, X
 } from 'lucide-react'
 import { supabase, TABLES } from './supabase'
 import './App.css'
@@ -53,11 +53,11 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const sections = [
-    { id: 'summary', label: 'Summary' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'education', label: 'Education' },
+    { id: 'summary', label: 'Summary', icon: <Lightbulb size={18} /> },
+    { id: 'skills', label: 'Skills', icon: <Code2 size={18} /> },
+    { id: 'projects', label: 'Projects', icon: <Rocket size={18} /> },
+    { id: 'experience', label: 'Experience', icon: <Briefcase size={18} /> },
+    { id: 'education', label: 'Education', icon: <GraduationCap size={18} /> },
   ]
 
   const scrollToSection = (id: string) => {
@@ -108,6 +108,7 @@ function App() {
         <div className="menu-dropdown">
           {sections.map(section => (
             <button key={section.id} onClick={() => scrollToSection(section.id)}>
+              {section.icon}
               {section.label}
             </button>
           ))}
