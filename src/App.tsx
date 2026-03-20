@@ -282,7 +282,7 @@ function App() {
         <div className="education-grid">
           {education.map(edu => (
             <div key={edu.id} className="edu-card">
-              <h4>{edu.degree}</h4>
+              <span className="edu-degree">{edu.degree}</span>
               <p className="edu-school">{edu.school}</p>
               <span className="edu-year">{edu.year}</span>
             </div>
