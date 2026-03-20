@@ -20,8 +20,8 @@
   --font-body: 'Archivo', sans-serif;
   
   /* Spacing */
-  --section-gap: 80px;
-  --card-gap: 24px;
+  --section-gap: 48px;
+  --card-gap: 16px;
 }
 
 * {
@@ -54,13 +54,13 @@ a:hover {
   padding: 0 24px;
 }
 
-/* Hero Section */
+/* Hero Section - Compact version */
 .hero {
-  min-height: 70vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 0;
+  padding: 40px 0;
   position: relative;
   overflow: hidden;
 }
@@ -76,11 +76,11 @@ a:hover {
   gap: 8px;
   background: linear-gradient(135deg, var(--accent-3), var(--cta));
   color: white;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 100px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   animation: pulse 2s infinite;
 }
 
@@ -91,10 +91,10 @@ a:hover {
 
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 700;
   letter-spacing: -2px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -102,23 +102,23 @@ a:hover {
 }
 
 .hero-subtitle {
-  font-size: 20px;
+  font-size: 16px;
   color: var(--secondary);
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   font-weight: 500;
 }
 
 .hero-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 12px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 15px;
+  gap: 6px;
+  font-size: 13px;
   color: var(--secondary);
 }
 
@@ -128,7 +128,7 @@ a:hover {
 
 .hero-decoration {
   position: absolute;
-  right: -100px;
+  right: -80px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
@@ -136,34 +136,34 @@ a:hover {
 
 .deco-block {
   position: absolute;
-  border-radius: 20px;
-  opacity: 0.1;
+  border-radius: 16px;
+  opacity: 0.08;
 }
 
 .block-1 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   background: var(--accent-3);
-  top: -150px;
+  top: -100px;
   right: 0;
   transform: rotate(15deg);
 }
 
 .block-2 {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background: var(--accent-1);
-  top: 50px;
-  right: 150px;
+  top: 30px;
+  right: 100px;
   transform: rotate(-10deg);
 }
 
 .block-3 {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background: var(--accent-2);
-  top: 200px;
-  right: 50px;
+  top: 140px;
+  right: 30px;
   transform: rotate(25deg);
 }
 
