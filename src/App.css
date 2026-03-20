@@ -54,6 +54,66 @@ a:hover {
   padding: 0 24px;
 }
 
+/* Sticky Menu Button */
+.menu-button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.menu-button:hover {
+  background: var(--secondary);
+  transform: scale(1.05);
+}
+
+/* Menu Dropdown */
+.menu-dropdown {
+  position: fixed;
+  top: 70px;
+  right: 16px;
+  z-index: 999;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  min-width: 160px;
+}
+
+.menu-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.menu-dropdown button:hover {
+  background: var(--bg);
+}
+
+.menu-dropdown button:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
 /* Hero Section - Compact version */
 .hero {
   min-height: auto;

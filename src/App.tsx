@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Menu, X } from 'lucide-react'
 import { 
   MapPin, Mail, ExternalLink, Github, 
   Code2, Lightbulb, Rocket, Briefcase, GraduationCap,
@@ -49,6 +50,23 @@ function App() {
   const [experience, setExperience] = useState<Experience[]>([])
   const [education, setEducation] = useState<Education[]>([])
   const [loading, setLoading] = useState(true)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const sections = [
+    { id: 'summary', label: 'Summary' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
+  ]
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      setMenuOpen(false)
+    }
+  }
 
   useEffect(() => {
     fetchData()
@@ -80,6 +98,22 @@ function App() {
 
   return (
     <div className="app">
+      {/* Sticky Menu Button */}
+      <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+      
+      {/* Menu Dropdown */}
+      {menuOpen && (
+        <div className="menu-dropdown">
+          {sections.map(section => (
+            <button key={section.id} onClick={() => scrollToSection(section.id)}>
+              {section.label}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Admin Link - Hidden for public view, access via /admin directly */}
       {/* <Link to="/admin" className="admin-link">
         <Settings size={18} />
@@ -120,7 +154,7 @@ function App() {
       </section>
 
       {/* Summary Section */}
-      <section className="section summary-section">
+      <section id="summary" className="section summary-section">
         <div className="section-header">
           <Lightbulb size={24} />
           <h2>Professional Summary</h2>
@@ -138,7 +172,7 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section className="section skills-section">
+      <section id="skills" className="section skills-section">
         <div className="section-header">
           <Code2 size={24} />
           <h2>Technical Skills</h2>
@@ -168,7 +202,7 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section className="section projects-section">
+      <section id="projects" className="section projects-section">
         <div className="section-header">
           <Rocket size={24} />
           <h2>Vibe Coding Projects</h2>
@@ -208,7 +242,7 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section className="section experience-section">
+      <section id="experience" className="section experience-section">
         <div className="section-header">
           <Briefcase size={24} />
           <h2>Professional Experience</h2>
@@ -239,7 +273,7 @@ function App() {
       </section>
 
       {/* Education Section */}
-      <section className="section education-section">
+      <section id="education" className="section education-section">
         <div className="section-header">
           <GraduationCap size={24} />
           <h2>Education</h2>
