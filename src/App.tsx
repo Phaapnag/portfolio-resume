@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react'
 import { 
   MapPin, Mail, ExternalLink, Github, 
   Code2, Lightbulb, Rocket, Briefcase, GraduationCap,
-  ChevronDown, Download, Sparkles, Settings
+  ChevronDown, Download, Sparkles
 } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { supabase, TABLES } from './supabase'
 import './App.css'
 
