@@ -1,135 +1,92 @@
+import { useState, useEffect } from 'react'
 import { 
   MapPin, Mail, ExternalLink, Github, Linkedin, 
   Code2, Lightbulb, Rocket, Briefcase, GraduationCap,
-  ChevronDown, Download, Sparkles
+  ChevronDown, Download, Sparkles, Settings
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { supabase, TABLES } from './supabase'
 import './App.css'
 
-function App() {
-  const projects = [
-    {
-      name: "Trade Position Calculator",
-      url: "https://tradesizer.vercel.app",
-      problem: "Traders manually calculate position sizes in spreadsheets, losing precious seconds during live markets",
-      solution: "Built React-based calculator that instantly computes optimal position size based on risk parameters",
-      tech: "React, Google AI Studio, Vercel",
-      result: "Reduced calculation time from minutes to seconds"
-    },
-    {
-      name: "Candle Catcher",
-      url: "https://candlecatcher.vercel.app",
-      problem: "Traders struggle to spot candle patterns visually, especially during fast-moving markets",
-      solution: "Interactive visual helper with neuomorphism UI design for pattern recognition",
-      tech: "React, Responsive design, Google AI Studio, Vercel",
-      result: "Clean, accessible interface demonstrating UI/UX principles"
-    },
-    {
-      name: "Virtual Try-On Web UI Prototype",
-      url: "#",
-      problem: "Concept for virtual try-on experiences (fashion, accessories, lifestyle)",
-      solution: "Interactive mockup with responsive layout",
-      tech: "React, Figma, Responsive layout",
-      result: "Proof-of-concept demonstrating full prototyping workflow"
-    },
-    {
-      name: "Spot the Difference Automation",
-      url: "#",
-      problem: "Semi-automated pipeline generating game videos for YouTube Shorts",
-      solution: "AIGC prompt engineering with semi-auto video editing",
-      tech: "Midjourney, flux-schnell, n8n/Make.com",
-      result: "Currently testing content quality and engagement metrics"
-    }
-  ]
+interface Role {
+  title: string
+  period: string
+  points: string[]
+}
 
-  const skills = {
-    languages: "React, JavaScript, HTML/CSS, Basic Python",
-    tools: "Vercel, Netlify, GitHub, Git, Responsive Design",
-    ai: "Google AI Studio, OpenWork Agent (OpenCode), LLMs (Gemini, Perplexity, Grok, Qwen)",
-    key: "Fast prototyping, API integration, UI component development, Responsive web design"
+interface Experience {
+  id: number
+  company: string
+  period: string
+  roles: Role[]
+}
+
+interface Education {
+  id: number
+  degree: string
+  school: string
+  year: string
+}
+
+interface Skill {
+  id: number
+  category: string
+  content: string
+}
+
+interface Project {
+  id: number
+  name: string
+  url: string
+  problem: string
+  solution: string
+  tech: string
+  result: string
+}
+
+function App() {
+  const [projects, setProjects] = useState<Project[]>([])
+  const [skills, setSkills] = useState<Skill[]>([])
+  const [experience, setExperience] = useState<Experience[]>([])
+  const [education, setEducation] = useState<Education[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    setLoading(true)
+    const [expRes, eduRes, skillRes, projRes] = await Promise.all([
+      supabase.from(TABLES.EXPERIENCE).select('*').order('display_order'),
+      supabase.from(TABLES.EDUCATION).select('*').order('display_order'),
+      supabase.from(TABLES.SKILLS).select('*'),
+      supabase.from(TABLES.PROJECTS).select('*').order('display_order'),
+    ])
+
+    if (expRes.data) setExperience(expRes.data)
+    if (eduRes.data) setEducation(eduRes.data)
+    if (skillRes.data) setSkills(skillRes.data)
+    if (projRes.data) setProjects(projRes.data)
+    setLoading(false)
   }
 
-  const experience = [
-    {
-      company: "Legislative Council Secretariat 立法會秘書處",
-      period: "Aug 2011 – Dec 2025",
-      roles: [
-        {
-          title: "Public Information Officer",
-          period: "Jun 2014 – Dec 2025",
-          points: [
-            "Managed operations of Legislative Council Souvenir Shop, streamlining processes and improving inventory efficiency",
-            "Led and mentored a team of 26 frontline staff; implemented roster optimization reducing conflicts by ~30%",
-            "Coordinated with stakeholders to resolve financial reporting and procurement issues",
-            "Planned and executed souvenir promotion campaigns, analyzing market trends to drive product decisions",
-            "Automated tracking and reporting, reducing administrative overhead"
-          ]
-        },
-        {
-          title: "Educator & Programme Developer",
-          period: "Aug 2011 – May 2014",
-          points: [
-            "Designed and delivered engaging educational programmes to diverse audiences",
-            "Conducted storytelling and interactive sessions improving audience engagement",
-            "Collaborated with multiple departments to plan and execute public programmes"
-          ]
-        }
-      ]
-    },
-    {
-      company: "Yeo Chei Man Senior Secondary School 啬色園主辦可道中學",
-      period: "Sep 2005 – Aug 2011",
-      roles: [
-        {
-          title: "Teacher",
-          period: "Sep 2005 – Aug 2011",
-          points: [
-            "Taught F.4 & F.5 Mathematics; Drama module for F.5 Chinese Language",
-            "Advisor of Drama Club, Class Tutor; Head of Student Leadership Programme (09–10)",
-            "Deputy Head of Other Learning Experience (08–09); Designed curriculum materials"
-          ]
-        }
-      ]
-    },
-    {
-      company: "Buddhist Ho Nam Kam College 佛教南蓮中學",
-      period: "Sep 2003 – Aug 2005",
-      roles: [
-        {
-          title: "Graduate Master / Subject Teacher",
-          period: "Sep 2003 – Aug 2005",
-          points: [
-            "Taught F.5 Mathematics & Additional Mathematics; Computer Literacy Teacher",
-            "Extra-Curricular Activities Coordinator; Class Teacher (F.5S)",
-            "Organized and supervised student activities and events"
-          ]
-        }
-      ]
-    },
-    {
-      company: "Other Education Roles 其他教育工作",
-      period: "2002 – 2005",
-      roles: [
-        {
-          title: "Part-time Tutor / Teaching Assistant",
-          period: "Various",
-          points: [
-            "Tutorial classes for HKCEE and HKALE students (Mathematics)",
-            "Part-time teaching at HKU Space (Computing)",
-            "Private tutoring in Mathematics and Computer Studies"
-          ]
-        }
-      ]
-    }
-  ]
-
-  const education = [
-    { degree: "Master of Fine Arts (Drama and Theatre Education)", school: "Hong Kong Academy for Performing Arts", year: "2014" },
-    { degree: "Postgraduate Diploma in Education (Computer Studies)", school: "Hong Kong Baptist University", year: "2003" },
-    { degree: "Bachelor of Electronic Engineering", school: "The Chinese University of Hong Kong", year: "2002" }
-  ]
+  if (loading) {
+    return (
+      <div className="app loading">
+        <div className="loader">Loading...</div>
+      </div>
+    )
+  }
 
   return (
     <div className="app">
+      {/* Admin Link */}
+      <Link to="/admin" className="admin-link">
+        <Settings size={18} />
+        <span>Admin</span>
+      </Link>
+
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -151,11 +108,11 @@ function App() {
             </div>
             <div className="info-item">
               <Github size={18} />
-              <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer">github.com/yourname</a>
+              <a href="https://github.com/Phaapnag" target="_blank" rel="noopener noreferrer">github.com/Phaapnag</a>
             </div>
             <div className="info-item">
               <Linkedin size={18} />
-              <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourname</a>
+              <a href="https://linkedin.com/in/wongwaihang" target="_blank" rel="noopener noreferrer">linkedin.com/in/wongwaihang</a>
             </div>
           </div>
         </div>
@@ -191,22 +148,12 @@ function App() {
           <h2>Technical Skills</h2>
         </div>
         <div className="skills-grid">
-          <div className="skill-card">
-            <h4>Languages & Frameworks</h4>
-            <p>{skills.languages}</p>
-          </div>
-          <div className="skill-card">
-            <h4>Dev & Deployment</h4>
-            <p>{skills.tools}</p>
-          </div>
-          <div className="skill-card">
-            <h4>AI & Automation</h4>
-            <p>{skills.ai}</p>
-          </div>
-          <div className="skill-card">
-            <h4>Key Competencies</h4>
-            <p>{skills.key}</p>
-          </div>
+          {skills.map(skill => (
+            <div key={skill.id} className="skill-card">
+              <h4>{skill.category}</h4>
+              <p>{skill.content}</p>
+            </div>
+          ))}
         </div>
         
         <div className="soft-skills">
@@ -231,11 +178,11 @@ function App() {
           <h2>Vibe Coding Projects</h2>
         </div>
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div key={index} className="project-card">
+          {projects.map(project => (
+            <div key={project.id} className="project-card">
               <div className="project-header">
                 <h3>{project.name}</h3>
-                {project.url !== "#" && (
+                {project.url !== "#" && project.url && (
                   <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-link">
                     <ExternalLink size={16} />
                   </a>
@@ -271,8 +218,8 @@ function App() {
           <h2>Professional Experience</h2>
         </div>
         <div className="timeline">
-          {experience.map((exp, index) => (
-            <div key={index} className="timeline-item">
+          {experience.map(exp => (
+            <div key={exp.id} className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
                 <div className="timeline-header">
@@ -302,8 +249,8 @@ function App() {
           <h2>Education</h2>
         </div>
         <div className="education-grid">
-          {education.map((edu, index) => (
-            <div key={index} className="edu-card">
+          {education.map(edu => (
+            <div key={edu.id} className="edu-card">
               <h4>{edu.degree}</h4>
               <p className="edu-school">{edu.school}</p>
               <span className="edu-year">{edu.year}</span>
