@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { 
   MapPin, Mail, ExternalLink, Github, 
   Code2, Lightbulb, Rocket, Briefcase, GraduationCap,
-  ChevronDown, Download, Sparkles, Menu, X
+  ChevronDown, Download, Sparkles, Menu, X, FileText
 } from 'lucide-react'
 import { supabase, TABLES } from './supabase'
 import './App.css'
@@ -71,6 +71,8 @@ function App() {
     { id: 'projects', label: 'Projects', icon: <Rocket size={18} /> },
     { id: 'experience', label: 'Experience', icon: <Briefcase size={18} /> },
     { id: 'education', label: 'Education', icon: <GraduationCap size={18} /> },
+    { id: 'exams', label: 'Exams', icon: <GraduationCap size={18} /> },
+    { id: 'info', label: 'Info', icon: <FileText size={18} /> },
   ]
 
   const scrollToSection = (id: string) => {
@@ -305,7 +307,7 @@ function App() {
             </div>
           ))}
         </div>
-        <div className="exam-results">
+        <div id="exams" className="exam-results">
           <h4>Public Examinations</h4>
           <div className="exam-tags">
             {exams.map(exam => (
@@ -316,7 +318,7 @@ function App() {
       </section>
 
       {/* Additional Info */}
-      <section className="section info-section">
+      <section id="info" className="section info-section">
         <div className="info-grid">
           {info.map(item => (
             <div key={item.id} className="info-card">

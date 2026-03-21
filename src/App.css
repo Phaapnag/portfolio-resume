@@ -644,6 +644,8 @@ a:hover {
 .info-card p {
   font-size: 18px;
   font-weight: 700;
+  white-space: pre-line;
+  line-height: 1.4;
 }
 
 .info-card .note {
