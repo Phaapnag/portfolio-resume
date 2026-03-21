@@ -11,4 +11,6 @@ export const TABLES = {
   EDUCATION: 'resume_education',
   SKILLS: 'resume_skills',
   PROJECTS: 'resume_projects',
+  EXAMS: 'resume_exams',
+  INFO: 'resume_info',
 }

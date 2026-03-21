@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase, TABLES } from './supabase'
 import { 
   ArrowLeft, Trash2, Edit2, X, Check,
-  Briefcase, GraduationCap, Code2, Rocket
+  Briefcase, GraduationCap, Code2, Rocket, FileText
 } from 'lucide-react'
 import './AdminConsole.css'
 
@@ -46,11 +46,13 @@ interface Project {
 }
 
 export default function AdminConsole() {
-  const [activeTab, setActiveTab] = useState<'experience' | 'education' | 'skills' | 'projects'>('experience')
+  const [activeTab, setActiveTab] = useState<'experience' | 'education' | 'skills' | 'projects' | 'exams' | 'info'>('experience')
   const [experience, setExperience] = useState<Experience[]>([])
   const [education, setEducation] = useState<Education[]>([])
   const [skills, setSkills] = useState<Skill[]>([])
   const [projects, setProjects] = useState<Project[]>([])
+  const [exams, setExams] = useState<{id: number, label: string, value: string}[]>([])
+  const [info, setInfo] = useState<{id: number, key: string, value: string}[]>([])
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
   const [editingId, setEditingId] = useState<number | null>(null)
@@ -61,17 +63,21 @@ export default function AdminConsole() {
   }, [])
 
   const fetchData = async () => {
-    const [expRes, eduRes, skillRes, projRes] = await Promise.all([
+    const [expRes, eduRes, skillRes, projRes, examsRes, infoRes] = await Promise.all([
       supabase.from(TABLES.EXPERIENCE).select('*').order('display_order'),
       supabase.from(TABLES.EDUCATION).select('*').order('display_order'),
       supabase.from(TABLES.SKILLS).select('*'),
       supabase.from(TABLES.PROJECTS).select('*').order('display_order'),
+      supabase.from(TABLES.EXAMS).select('*'),
+      supabase.from(TABLES.INFO).select('*'),
     ])
 
     if (expRes.data) setExperience(expRes.data)
     if (eduRes.data) setEducation(eduRes.data)
     if (skillRes.data) setSkills(skillRes.data)
     if (projRes.data) setProjects(projRes.data)
+    if (examsRes.data) setExams(examsRes.data)
+    if (infoRes.data) setInfo(infoRes.data)
   }
 
   const showMessage = (msg: string) => {
@@ -207,6 +213,80 @@ export default function AdminConsole() {
     showMessage('Deleted!')
   }
 
+  // Exams CRUD
+  const startEditExam = (exam: {id: number, label: string, value: string}) => {
+    setEditingId(exam.id)
+    setEditForm({ label: exam.label, value: exam.value })
+  }
+
+  const saveExam = async () => {
+    if (!editForm || editingId === null) return
+    setSaving(true)
+    const { error } = await supabase
+      .from(TABLES.EXAMS)
+      .update({ label: editForm.label, value: editForm.value })
+      .eq('id', editingId)
+    if (!error) {
+      await fetchData()
+      setEditingId(null)
+      setEditForm(null)
+      showMessage('Exam saved!')
+    }
+    setSaving(false)
+  }
+
+  const addExam = async () => {
+    setSaving(true)
+    await supabase.from(TABLES.EXAMS).insert({ label: 'New Exam', value: 'Grade' })
+    await fetchData()
+    setSaving(false)
+    showMessage('Added new exam!')
+  }
+
+  const deleteExam = async (id: number) => {
+    if (!confirm('Delete this exam?')) return
+    await supabase.from(TABLES.EXAMS).delete().eq('id', id)
+    await fetchData()
+    showMessage('Deleted!')
+  }
+
+  // Info CRUD
+  const startEditInfo = (item: {id: number, key: string, value: string}) => {
+    setEditingId(item.id)
+    setEditForm({ key: item.key, value: item.value })
+  }
+
+  const saveInfo = async () => {
+    if (!editForm || editingId === null) return
+    setSaving(true)
+    const { error } = await supabase
+      .from(TABLES.INFO)
+      .update({ key: editForm.key, value: editForm.value })
+      .eq('id', editingId)
+    if (!error) {
+      await fetchData()
+      setEditingId(null)
+      setEditForm(null)
+      showMessage('Info saved!')
+    }
+    setSaving(false)
+  }
+
+  const addInfo = async () => {
+    setSaving(true)
+    await supabase.from(TABLES.INFO).insert({ key: 'New Field', value: 'Value' })
+    await fetchData()
+    setSaving(false)
+    showMessage('Added new info!')
+  }
+
+  const deleteInfo = async (id: number) => {
+    if (!confirm('Delete this info?')) return
+    await supabase.from(TABLES.INFO).delete().eq('id', id)
+    await fetchData()
+    showMessage('Deleted!')
+  }
+
   return (
     <div className="admin-console">
       <div className="admin-header">
@@ -243,6 +323,18 @@ export default function AdminConsole() {
           onClick={() => setActiveTab('projects')}
         >
           <Rocket size={18} /> Projects
+        </button>
+        <button 
+          className={activeTab === 'exams' ? 'active' : ''} 
+          onClick={() => setActiveTab('exams')}
+        >
+          <GraduationCap size={18} /> Exams
+        </button>
+        <button 
+          className={activeTab === 'info' ? 'active' : ''} 
+          onClick={() => setActiveTab('info')}
+        >
+          <FileText size={18} /> Info
         </button>
       </div>
 
@@ -501,6 +593,94 @@ export default function AdminConsole() {
                       <p><strong>Solution:</strong> {proj.solution}</p>
                       <p><strong>Tech:</strong> {proj.tech}</p>
                       <p><strong>Result:</strong> {proj.result}</p>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Exams Tab */}
+        {activeTab === 'exams' && (
+          <div className="section">
+            <h2>Public Examinations</h2>
+            <button onClick={addExam} className="btn-add" disabled={saving}>+ Add Exam</button>
+            {exams.map(exam => (
+              <div key={exam.id} className="card">
+                {editingId === exam.id ? (
+                  <div className="edit-form">
+                    <label>Label (e.g., HKALE):
+                      <input 
+                        type="text" 
+                        value={editForm?.label || ''} 
+                        onChange={e => setEditForm({...editForm, label: e.target.value})}
+                      />
+                    </label>
+                    <label>Value (e.g., 1B2C):
+                      <input 
+                        type="text" 
+                        value={editForm?.value || ''} 
+                        onChange={e => setEditForm({...editForm, value: e.target.value})}
+                      />
+                    </label>
+                    <div className="edit-actions">
+                      <button onClick={saveExam} className="btn-save" disabled={saving}>Save</button>
+                      <button onClick={() => { setEditingId(null); setEditForm(null) }} className="btn-cancel">Cancel</button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="card-header">
+                      <span>{exam.label}: {exam.value}</span>
+                      <div className="card-actions">
+                        <button onClick={() => startEditExam(exam)} className="btn-edit"><Edit2 size={16} /></button>
+                        <button onClick={() => deleteExam(exam.id)} className="btn-delete"><Trash2 size={16} /></button>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Info Tab */}
+        {activeTab === 'info' && (
+          <div className="section">
+            <h2>Additional Info</h2>
+            <button onClick={addInfo} className="btn-add" disabled={saving}>+ Add Info</button>
+            {info.map(item => (
+              <div key={item.id} className="card">
+                {editingId === item.id ? (
+                  <div className="edit-form">
+                    <label>Field Name (e.g., Expected Salary):
+                      <input 
+                        type="text" 
+                        value={editForm?.key || ''} 
+                        onChange={e => setEditForm({...editForm, key: e.target.value})}
+                      />
+                    </label>
+                    <label>Value (e.g., HK$30,000/month):
+                      <input 
+                        type="text" 
+                        value={editForm?.value || ''} 
+                        onChange={e => setEditForm({...editForm, value: e.target.value})}
+                      />
+                    </label>
+                    <div className="edit-actions">
+                      <button onClick={saveInfo} className="btn-save" disabled={saving}>Save</button>
+                      <button onClick={() => { setEditingId(null); setEditForm(null) }} className="btn-cancel">Cancel</button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="card-header">
+                      <span><strong>{item.key}:</strong> {item.value}</span>
+                      <div className="card-actions">
+                        <button onClick={() => startEditInfo(item)} className="btn-edit"><Edit2 size={16} /></button>
+                        <button onClick={() => deleteInfo(item.id)} className="btn-delete"><Trash2 size={16} /></button>
+                      </div>
                     </div>
                   </>
                 )}

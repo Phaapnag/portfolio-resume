@@ -35,7 +35,6 @@ interface Skill {
 
 interface Project {
   id: number
-  name: string
   url: string
   problem: string
   solution: string
@@ -43,11 +42,25 @@ interface Project {
   result: string
 }
 
+interface Exam {
+  id: number
+  label: string
+  value: string
+}
+
+interface Info {
+  id: number
+  key: string
+  value: string
+}
+
 function App() {
   const [projects, setProjects] = useState<Project[]>([])
   const [skills, setSkills] = useState<Skill[]>([])
   const [experience, setExperience] = useState<Experience[]>([])
   const [education, setEducation] = useState<Education[]>([])
+  const [exams, setExams] = useState<Exam[]>([])
+  const [info, setInfo] = useState<Info[]>([])
   const [loading, setLoading] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -73,17 +86,21 @@ function App() {
 
   const fetchData = async () => {
     setLoading(true)
-    const [expRes, eduRes, skillRes, projRes] = await Promise.all([
+    const [expRes, eduRes, skillRes, projRes, examsRes, infoRes] = await Promise.all([
       supabase.from(TABLES.EXPERIENCE).select('*').order('display_order'),
       supabase.from(TABLES.EDUCATION).select('*').order('display_order'),
       supabase.from(TABLES.SKILLS).select('*'),
       supabase.from(TABLES.PROJECTS).select('*').order('display_order'),
+      supabase.from(TABLES.EXAMS).select('*'),
+      supabase.from(TABLES.INFO).select('*'),
     ])
 
     if (expRes.data) setExperience(expRes.data)
     if (eduRes.data) setEducation(eduRes.data)
     if (skillRes.data) setSkills(skillRes.data)
     if (projRes.data) setProjects(projRes.data)
+    if (examsRes.data) setExams(examsRes.data)
+    if (infoRes.data) setInfo(infoRes.data)
     setLoading(false)
   }
 
@@ -290,8 +307,9 @@ function App() {
         <div className="exam-results">
           <h4>Public Examinations</h4>
           <div className="exam-tags">
-            <span>HKALE: 1B2C</span>
-            <span>HKCEE: 6B2C</span>
+            {exams.map(exam => (
+              <span key={exam.id}>{exam.label}: {exam.value}</span>
+            ))}
           </div>
         </div>
       </section>
@@ -299,18 +317,12 @@ function App() {
       {/* Additional Info */}
       <section className="section info-section">
         <div className="info-grid">
-          <div className="info-card">
-            <h4>Expected Salary</h4>
-            <p>HK$30,000/month <span className="note">(negotiable)</span></p>
-          </div>
-          <div className="info-card">
-            <h4>Availability</h4>
-            <p>Immediate</p>
-          </div>
-          <div className="info-card">
-            <h4>Languages</h4>
-            <p>English (fluent), Cantonese (native), Mandarin (conversational)</p>
-          </div>
+          {info.map(item => (
+            <div key={item.id} className="info-card">
+              <h4>{item.key}</h4>
+              <p>{item.value}</p>
+            </div>
+          ))}
         </div>
       </section>
 
