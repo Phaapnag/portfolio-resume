@@ -323,7 +323,9 @@ function App() {
           {info.map(item => (
             <div key={item.id} className="info-card">
               <h4>{item.key}</h4>
-              <p>{item.value}</p>
+              <p>{item.value.split('\\n').map((line, i) => (
+                <span key={i}>{line}{i < item.value.split('\\n').length - 1 && <br />}</span>
+              ))}</p>
             </div>
           ))}
         </div>
