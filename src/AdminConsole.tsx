@@ -213,6 +213,21 @@ export default function AdminConsole() {
     showMessage('Deleted!')
   }
 
+  const addProject = async () => {
+    setSaving(true)
+    await supabase.from(TABLES.PROJECTS).insert({ 
+      name: 'New Project',
+      url: 'https://',
+      problem: 'Problem description',
+      solution: 'Solution description',
+      tech: 'React, Vercel',
+      result: 'Result description'
+    })
+    await fetchData()
+    setSaving(false)
+    showMessage('Added new project!')
+  }
+
   // Exams CRUD
   const startEditExam = (exam: {id: number, label: string, value: string}) => {
     setEditingId(exam.id)
@@ -519,6 +534,7 @@ export default function AdminConsole() {
         {activeTab === 'projects' && (
           <div className="section">
             <h2>Projects</h2>
+            <button onClick={addProject} className="btn-add" disabled={saving}>+ Add Project</button>
             {projects.map(proj => (
               <div key={proj.id} className="card">
                 {editingId === proj.id ? (
