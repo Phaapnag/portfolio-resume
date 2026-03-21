@@ -35,6 +35,7 @@ interface Skill {
 
 interface Project {
   id: number
+  name: string
   url: string
   problem: string
   solution: string
