@@ -124,6 +124,15 @@
       "workflow": "Learning how agent orchestration, role separation, state flow, and routing can be applied to practical task execution."
     },
     {
+      "name": "Spot the Difference Content Pipeline",
+      "status": "Concept / Prototype",
+      "type": "Creative Automation Workflow",
+      "url": "",
+      "description": "A semi-automated content pipeline for generating short-form 'spot the difference' game videos from image pairs, designed as a repeatable workflow for lightweight entertainment content production.",
+      "tech": "Midjourney, flux-schnell, n8n/Make.com, Google AI Studio",
+      "workflow": "Explored prompt engineering for image generation and semi-automated editing steps to turn visual concepts into reusable short-form content workflow experiments."
+    },
+    {
       "name": "Emoji Crowd Runner",
       "status": "Live",
       "type": "Web Game",
