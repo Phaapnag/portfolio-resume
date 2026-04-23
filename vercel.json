@@ -6,6 +6,7 @@
     }
   },
   "rewrites": [
+    { "source": "/portfolio.json", "destination": "/portfolio.json" },
     { "source": "/api/portfolio", "destination": "/api/portfolio.ts" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
