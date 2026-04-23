@@ -842,12 +842,13 @@ a:hover {
     color: #666;
   }
 
-  /* Section adjustments - compact */
+  /* Section adjustments - compact with borders */
   .section {
-    margin-bottom: 8px !important;
+    margin-bottom: 6px !important;
     padding: 6px !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+    border-bottom: 1px solid #eee !important;
   }
 
   .section-header {
@@ -856,29 +857,27 @@ a:hover {
   }
 
   .section-header h2 {
-    font-size: 11pt !important;
+    font-size: 12pt !important;
+    font-weight: 600 !important;
     margin-bottom: 4px !important;
     color: #1a1a1a !important;
+    border-left: 3px solid #333 !important;
+    padding-left: 8px !important;
   }
 
-  /* Hero - super compact */
-  .hero {
-    padding: 10px 0 !important;
-    min-height: auto !important;
-  }
-
-  .hero-content {
-    padding: 0 !important;
-  }
-
+  /* Hero - make name prominent */
   .hero h1 {
-    font-size: 18pt !important;
-    margin-bottom: 3px !important;
+    font-size: 22pt !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 2px !important;
+    letter-spacing: 2px !important;
   }
 
   .hero-subtitle {
-    font-size: 10pt !important;
-    margin-bottom: 6px !important;
+    font-size: 11pt !important;
+    margin-bottom: 8px !important;
+    color: #444 !important;
   }
 
   .hero-info {
@@ -968,10 +967,20 @@ a:hover {
     margin-bottom: 2px !important;
   }
 
-  /* Experience */
+  /* Experience - 2 columns grid */
+  .experience-section .experience-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
   .experience-card {
     padding: 6px !important;
-    margin-bottom: 6px !important;
+    margin: 0 !important;
+    border: 1px solid #eee !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
   .experience-card h3 {
@@ -989,28 +998,29 @@ a:hover {
     line-height: 1.2 !important;
   }
 
-  /* Education - 3 columns */
+  /* Education - 2 columns (was 3) */
   .education-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 6px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4px !important;
     width: 100% !important;
   }
 
   .edu-card {
-    padding: 6px !important;
+    padding: 4px !important;
     margin: 0 !important;
     border: 1px solid #eee !important;
-    font-size: 8pt !important;
+    font-size: 7pt !important;
   }
 
   .edu-card .degree {
-    font-size: 9pt !important;
+    font-size: 8pt !important;
+    font-weight: 600 !important;
   }
 
   .edu-card .school,
   .edu-card .year {
-    font-size: 7pt !important;
+    font-size: 6pt !important;
   }
 
   /* Exam tags */
