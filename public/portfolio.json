@@ -1,27 +1,115 @@
 {
   "name": "Wong Wai Hang",
-  "title": "Software Engineer",
-  "bio": "Passionate software engineer with experience in modern web technologies",
-  "experience": [],
-  "education": [],
-  "skills": [],
+  "title": "Senior Software Engineer",
+  "bio": "Passionate software engineer with experience in modern web technologies, AI automation, and fast prototyping",
+  
+  "experience": [
+    {
+      "company": "Legislative Council Secretariat 立法會秘書處",
+      "period": "Aug 2011 – Dec 2025",
+      "roles": [
+        {
+          "title": "Public Information Officer",
+          "period": "Jun 2014 – Dec 2025",
+          "points": [
+            "Managed operations of Legislative Council Souvenir Shop, streamlining processes and improving inventory efficiency",
+            "Led and mentored a team of 26 frontline staff; implemented roster optimization reducing conflicts by ~30%",
+            "Coordinated with stakeholders to resolve financial reporting and procurement issues",
+            "Planned and executed souvenir promotion campaigns, analyzing market trends to drive product decisions",
+            "Automated tracking and reporting, reducing administrative overhead"
+          ]
+        },
+        {
+          "title": "Educator",
+          "period": "Aug 2011 – May 2014",
+          "points": [
+            "Designed and delivered engaging educational programmes to diverse audiences",
+            "Conducted storytelling and interactive sessions improving audience engagement",
+            "Collaborated with multiple departments to plan and execute public programmes"
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "education": [
+    {
+      "institution": "Hong Kong Academy for Performing Arts",
+      "degree": "Master of Fine Arts (Drama and Theatre in Education)",
+      "period": "2009-2014"
+    },
+    {
+      "institution": "Hong Kong Baptist University",
+      "degree": "Postgraduate Diploma in Education (Computer Studies)",
+      "period": "2002-2003"
+    },
+    {
+      "institution": "The Chinese University of Hong Kong",
+      "degree": "Bachelor of Electronic Engineering",
+      "period": "1998-2002"
+    },
+    {
+      "institution": "Yeo Chei Man Senior Secondary School 邱子文高中學校",
+      "degree": "Teacher (Mathematics, Drama)",
+      "period": "Sep 2005 – Aug 2011"
+    },
+    {
+      "institution": "Buddhist Ho Nam Kam College 佛教何南金中學",
+      "degree": "Graduate Master (Mathematics)",
+      "period": "Sep 2003 – Aug 2005"
+    }
+  ],
+  
+  "skills": {
+    "languagesFrameworks": ["React", "JavaScript", "HTML/CSS", "Basic Python"],
+    "devDeployment": ["Vercel", "Netlify", "GitHub", "Git", "Responsive Design"],
+    "aiAutomation": ["Google AI Studio", "OpenWork Agent (OpenCode)", "LLMs (Gemini, Perplexity, Grok, Qwen)"],
+    "competencies": ["Fast prototyping", "API integration", "UI component development", "Responsive web design"]
+  },
+  
   "projects": [
     {
+      "name": "Trade Position Calculator",
+      "url": "https://tradesizer.vercel.app",
+      "description": "React-based calculator that instantly computes optimal position size based on risk parameters",
+      "tech": "React, Google AI Studio, Vercel"
+    },
+    {
+      "name": "Candle Catcher",
+      "url": "https://candlecatcher.vercel.app",
+      "description": "Visual helper with neuromorphism UI for expiry date calculations across multiple markets",
+      "tech": "React, Responsive design, Google AI Studio, Vercel"
+    },
+    {
+      "name": "Virtual Try-On Web UI Prototype",
+      "url": "#",
+      "description": "Interactive mockup with responsive layout for virtual try-on experiences",
+      "tech": "React, Google Stitch, Responsive layout"
+    },
+    {
       "name": "Spot the Difference Automation",
-      "description": "Automated spot-the-difference image generator using AI",
-      "link": "https://spotdiffgen.vercel.app/"
+      "url": "https://spotdiffgen.vercel.app/",
+      "description": "AIGC prompt engineering with semi-auto video editing for YouTube Shorts",
+      "tech": "Midjourney, flux-schnell, n8n/Make.com, Google AI Studio"
     },
     {
       "name": "Emoji Crowd Runner",
+      "url": "https://emoji-crowd-runner.vercel.app",
       "description": "Web-based game built with Three.js",
-      "link": "https://emoji-crowd-runner.vercel.app"
-    },
-    {
-      "name": "踩坑工房",
-      "description": "Blog about avoiding pitfalls in tech purchases",
-      "link": "https://chapeng-studio.vercel.app"
+      "tech": "React, Three.js, Vercel"
     }
   ],
-  "exams": [],
-  "updated": "2026-04-22"
+  
+  "exams": [
+    {
+      "exam": "HKALE",
+      "result": "1B2C"
+    },
+    {
+      "exam": "HKCEE",
+      "result": "6B2C"
+    }
+  ],
+  
+  "updated": "2026-04-23"
 }
