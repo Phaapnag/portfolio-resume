@@ -1,6 +1,6 @@
 {
   "name": "Wong Wai Hang",
-  "title": "AI Workflow & Prototype Builder",
+  "title": "Workflow Designer | AI Prototyping & No-Code Automation",
   "location": "Hong Kong",
   "email": "wongwh1015@gmail.com",
   "summary": "Operations and education professional with 14+ years of stakeholder-facing experience, team coordination, and service delivery, now actively building practical capability in AI workflow design, no-code orchestration, and vibe coding. Hands-on experience in deploying web apps, exploring agent-style workflows, and turning real operational needs into testable digital prototypes.",
@@ -28,17 +28,11 @@
       "n8n / Make.com concepts",
       "Unsloth (learning)"
     ],
-    "workflowCompetencies": [
-      "Fast prototyping", "Workflow design", "Prompt structuring",
-      "Agent profile thinking", "API / tool integration", "UI component development"
-    ]
-  },
-  
-  "softSkills": [
-    "Problem-solving", "Stakeholder collaboration", "Process optimization",
-    "Team leadership (26-person team)", "Communication", "Facilitation",
-    "Project coordination", "Agile mindset"
-  ],
+"workflowCompetencies": [
+      "Fast prototyping", "Process mapping", "Conversation flow design",
+      "Workflow documentation", "Prototype testing and iteration",
+      "Prompt structuring", "Agent profile thinking", "API / tool integration", "UI component development"
+    ],
   
   "experience": [
     {
@@ -133,7 +127,7 @@
       "name": "OpenWork + Telegram Workflow",
       "status": "Active Use",
       "type": "No-Code AI Workflow Application",
-      "description": "Practical daily workflow automation using OpenWork agent with Telegram integration. Demonstrates real-time agent interactions, task coordination, and multi-step workflows in a chat-based environment.",
+      "description": "Practical no-code workflow experimentation using OpenWork agent with Telegram integration, focused on agent interactions, task coordination, and chat-based multi-step workflow support.",
       "tech": "OpenWork (OpenCode), Telegram, LLMs (Gemini, Qwen)",
       "workflow": "Focused on prompt structure, task coordination, and making multi-step interactions more usable in practical scenarios. Currently supporting daily development and research tasks."
     },
