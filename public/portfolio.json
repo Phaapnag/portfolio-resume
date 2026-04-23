@@ -28,11 +28,18 @@
       "n8n / Make.com concepts",
       "Unsloth (learning)"
     ],
-"workflowCompetencies": [
+    "workflowCompetencies": [
       "Fast prototyping", "Process mapping", "Conversation flow design",
       "Workflow documentation", "Prototype testing and iteration",
       "Prompt structuring", "Agent profile thinking", "API / tool integration", "UI component development"
-    ],
+    ]
+  },
+  
+  "softSkills": [
+    "Problem-solving", "Stakeholder collaboration", "Process optimization",
+    "Team leadership (26-person team)", "Communication", "Facilitation",
+    "Project coordination", "Agile mindset"
+  ],
   
   "experience": [
     {
