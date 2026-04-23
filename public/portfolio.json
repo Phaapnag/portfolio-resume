@@ -1,7 +1,9 @@
 {
   "name": "Wong Wai Hang",
-  "title": "Senior Software Engineer",
-  "bio": "Passionate software engineer with experience in modern web technologies, AI automation, and fast prototyping",
+  "title": "AI Workflow & Prototype Builder",
+  "location": "Hong Kong",
+  "email": "wongwh1015@gmail.com",
+  "summary": "Operations and education professional with 14+ years of stakeholder-facing experience, team coordination, and service delivery, now actively building practical capability in AI workflow design, no-code orchestration, and vibe coding. Hands-on experience in deploying web apps, exploring agent-style workflows, and turning real operational needs into testable digital prototypes.",
   
   "info": {
     "expectedSalary": "HK$30,000/month (negotiable)",
@@ -13,6 +15,31 @@
     }
   },
   
+  "technicalSkills": {
+    "languagesAndFrameworks": [
+      "React", "JavaScript", "HTML/CSS", "Basic Python"
+    ],
+    "devAndDeployment": [
+      "GitHub", "Vercel", "Netlify", "Responsive Web Design"
+    ],
+    "aiAndAutomation": [
+      "Google AI Studio", "OpenWork Agent (OpenCode)", "Telegram workflow integration",
+      "LLMs (Gemini, Perplexity, Grok, Qwen)",
+      "n8n / Make.com concepts",
+      "Unsloth (learning)"
+    ],
+    "workflowCompetencies": [
+      "Fast prototyping", "Workflow design", "Prompt structuring",
+      "Agent profile thinking", "API / tool integration", "UI component development"
+    ]
+  },
+  
+  "softSkills": [
+    "Problem-solving", "Stakeholder collaboration", "Process optimization",
+    "Team leadership (26-person team)", "Communication", "Facilitation",
+    "Project coordination", "Agile mindset"
+  ],
+  
   "experience": [
     {
       "company": "Legislative Council Secretariat 立法會秘書處",
@@ -22,20 +49,18 @@
           "title": "Public Information Officer",
           "period": "Jun 2014 – Dec 2025",
           "points": [
-            "Managed operations of Legislative Council Souvenir Shop, streamlining processes and improving inventory efficiency",
-            "Led and mentored a team of 26 frontline staff; implemented roster optimization reducing conflicts by ~30%",
-            "Coordinated with stakeholders to resolve financial reporting and procurement issues",
-            "Planned and executed souvenir promotion campaigns, analyzing market trends to drive product decisions",
-            "Automated tracking and reporting, reducing administrative overhead"
+            "Handled public-facing operations, procurement, souvenir development, promotions, reporting, and stakeholder coordination",
+            "Managed a 26-person frontline team supporting public services, tours, and reception",
+            "Worked on real operational issues including roster planning, manpower deployment, and service delivery"
           ]
         },
         {
           "title": "Educator",
           "period": "Aug 2011 – May 2014",
           "points": [
-            "Designed and delivered engaging educational programmes to diverse audiences",
-            "Conducted storytelling and interactive sessions improving audience engagement",
-            "Collaborated with multiple departments to plan and execute public programmes"
+            "Built strong communication and facilitation skills through teaching, student engagement, and activity coordination",
+            "Explained complex concepts in accessible ways for different audiences",
+            "Developed user-focused problem-solving habits that now inform workflow thinking and AI prototyping"
           ]
         }
       ]
@@ -57,58 +82,81 @@
       "institution": "The Chinese University of Hong Kong",
       "degree": "Bachelor of Electronic Engineering",
       "period": "1998-2002"
-    },
-    {
-      "institution": "Yeo Chei Man Senior Secondary School 邱子文高中學校",
-      "degree": "Teacher (Mathematics, Drama)",
-      "period": "Sep 2005 – Aug 2011"
-    },
-    {
-      "institution": "Buddhist Ho Nam Kam College 佛教何南金中學",
-      "degree": "Graduate Master (Mathematics)",
-      "period": "Sep 2003 – Aug 2005"
     }
   ],
-  
-  "skills": {
-    "languagesFrameworks": ["React", "JavaScript", "HTML/CSS", "Basic Python"],
-    "devDeployment": ["Vercel", "Netlify", "GitHub", "Git", "Responsive Design"],
-    "aiAutomation": ["Google AI Studio", "OpenWork Agent (OpenCode)", "LLMs (Gemini, Perplexity, Grok, Qwen)"],
-    "competencies": ["Fast prototyping", "API integration", "UI component development", "Responsive web design"]
-  },
   
   "projects": [
     {
-      "name": "Trade Position Calculator",
+      "name": "Tradesizer",
+      "status": "Live",
+      "type": "Web App",
       "url": "https://tradesizer.vercel.app",
-      "description": "React-based calculator that instantly computes optimal position size based on risk parameters",
-      "tech": "React, Google AI Studio, Vercel"
+      "description": "A position sizing calculator designed to turn complex trading inputs into clear, usable outputs.",
+      "tech": "React, Google AI Studio, Vercel",
+      "workflow": "Used AI assistance to generate core logic, suggest validation rules, and draft UI components, then refined, tested, and deployed the app."
     },
     {
       "name": "Candle Catcher",
+      "status": "Live",
+      "type": "Web App",
       "url": "https://candlecatcher.vercel.app",
-      "description": "Visual helper with neuromorphism UI for expiry date calculations across multiple markets",
-      "tech": "React, Responsive design, Google AI Studio, Vercel"
-    },
-    {
-      "name": "Virtual Try-On Web UI Prototype",
-      "url": "#",
-      "description": "Interactive mockup with responsive layout for virtual try-on experiences",
-      "tech": "React, Google Stitch, Responsive layout"
-    },
-    {
-      "name": "Spot the Difference Automation",
-      "url": "https://spotdiffgen.vercel.app/",
-      "description": "AIGC prompt engineering with semi-auto video editing for YouTube Shorts",
-      "tech": "Midjourney, flux-schnell, n8n/Make.com, Google AI Studio"
+      "description": "A visual helper for identifying candle patterns with an emphasis on usability and responsive interface design.",
+      "tech": "React, Google AI Studio, Vercel",
+      "workflow": "Used AI for layout ideas, code stubs, and visual direction, followed by manual refinement for responsiveness and clarity."
     },
     {
       "name": "Emoji Crowd Runner",
+      "status": "Live",
+      "type": "Web Game",
       "url": "https://emoji-crowd-runner.vercel.app",
-      "description": "Web-based game built with Three.js",
-      "tech": "React, Three.js, Vercel"
+      "description": "3D crowd runner game with obstacle navigation, gate power-ups, and battle system. Built following a formal 12-day development roadmap.",
+      "tech": "React, Three.js, Vercel",
+      "workflow": "End-to-end game development demonstrating understanding of game mechanics, collision detection, particle effects, and deployment pipeline."
+    },
+    {
+      "name": "Roster Management System",
+      "status": "In Progress",
+      "type": "Workflow Prototype (Vibe Coding)",
+      "description": "An operations-focused prototype for roster coordination, designed around shift planning, leave handling, and manager usability.",
+      "tech": "Vibe coding, Web app prototyping",
+      "workflow": "Inspired by real frontline team management experience, with emphasis on operational logic, process clarity, and practical adoption."
+    },
+    {
+      "name": "Sick Leave Arrangement AI",
+      "status": "Learning Project",
+      "type": "Domain-Specific AI Assistant",
+      "description": "A domain-focused AI assistant exploring how a specialised LLM can support routine operational decision-making. Training FunctionGemma (mobile-optimized LLM) via Unsloth Studio for on-device staffing coordination.",
+      "tech": "Unsloth Studio, FunctionGemma, Mobile-oriented workflow thinking",
+      "workflow": "Exploring how a specialised assistant can support routine operational decision-making through targeted behaviour and workflow-aware responses."
+    },
+    {
+      "name": "OpenWork + Telegram Workflow",
+      "status": "Active Use",
+      "type": "No-Code AI Workflow Application",
+      "description": "Practical daily workflow automation using OpenWork agent with Telegram integration. Demonstrates real-time agent interactions, task coordination, and multi-step workflows in a chat-based environment.",
+      "tech": "OpenWork (OpenCode), Telegram, LLMs (Gemini, Qwen)",
+      "workflow": "Focused on prompt structure, task coordination, and making multi-step interactions more usable in practical scenarios. Currently supporting daily development and research tasks."
+    },
+    {
+      "name": "LangChain / LangGraph Agent Profiles",
+      "status": "Early Exploration",
+      "type": "Multi-Agent Architecture Study",
+      "description": "Experimenting with assigning different roles and responsibilities to different AI agents within a structured workflow.",
+      "tech": "LangChain, LangGraph",
+      "workflow": "Learning how agent orchestration, role separation, state flow, and routing can be applied to practical task execution."
     }
   ],
+  
+  "workingStyle": {
+    "title": "How I Build",
+    "steps": [
+      "Understand user needs and operational pain points",
+      "Map task flow and decision points",
+      "Prototype quickly with available tools",
+      "Test for usability and practical value",
+      "Refine into a simpler, clearer workflow"
+    ]
+  },
   
   "exams": [
     {
