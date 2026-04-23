@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wong Wai Hang - Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Archivo', sans-serif;
+      font-size: 10pt;
+      line-height: 1.3;
+      color: #1a1a1a;
+      background: white;
+      padding: 20px 25px;
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #1a1a1a;
+    }
+    
+    .header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 3px;
+    }
+    
+    .header .title {
+      font-size: 11pt;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    
+    .header .contact {
+      font-size: 9pt;
+      color: #666;
+    }
+    
+    .header .contact span {
+      margin: 0 8px;
+    }
+    
+    /* Section titles */
+    .section-title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 12px 0 6px 0;
+      padding-left: 8px;
+      border-left: 3px solid #00f0ff;
+    }
+    
+    /* Summary */
+    .summary {
+      font-size: 10pt;
+      margin-bottom: 8px;
+    }
+    
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .skill-item {
+      font-size: 9pt;
+    }
+    
+    .skill-item h4 {
+      font-size: 9pt;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    
+    .skill-item p {
+      font-size: 8pt;
+      color: #444;
+    }
+    
+    /* Soft skills */
+    .soft-skills {
+      margin-bottom: 10px;
+    }
+    
+    .soft-skills .tag {
+      display: inline-block;
+      font-size: 7pt;
+      background: #f0f0f0;
+      padding: 2px 8px;
+      margin: 2px 4px 2px 0;
+      border: 1px solid #ddd;
+    }
+    
+    /* Projects - 2 columns */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .project-card {
+      font-size: 8pt;
+      border: 1px solid #eee;
+      padding: 6px;
+    }
+    
+    .project-card h4 {
+      font-size: 9pt;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    
+    .project-card .tech {
+      font-size: 7pt;
+      color: #666;
+      margin-bottom: 2px;
+    }
+    
+    .project-card .result {
+      font-size: 7pt;
+      color: #888;
+    }
+    
+    /* Experience */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .exp-card {
+      font-size: 8pt;
+      border: 1px solid #eee;
+      padding: 6px;
+    }
+    
+    .exp-card h4 {
+      font-size: 9pt;
+      font-weight: 600;
+    }
+    
+    .exp-card .period {
+      font-size: 8pt;
+      color: #666;
+      margin-bottom: 3px;
+    }
+    
+    .exp-card ul {
+      font-size: 7pt;
+      padding-left: 12px;
+      color: #444;
+    }
+    
+    /* Education */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    
+    .edu-card {
+      font-size: 8pt;
+      border: 1px solid #eee;
+      padding: 5px;
+    }
+    
+    .edu-card .degree {
+      font-size: 8pt;
+      font-weight: 600;
+    }
+    
+    .edu-card .school,
+    .edu-card .year {
+      font-size: 7pt;
+      color: #666;
+    }
+    
+    /* Exams */
+    .exams {
+      font-size: 8pt;
+    }
+    
+    .exams span {
+      display: inline-block;
+      background: #f5f5f5;
+      padding: 2px 8px;
+      margin-right: 8px;
+    }
+    
+    /* Footer */
+    .footer {
+      margin-top: 10px;
+      padding-top: 6px;
+      border-top: 1px solid #ddd;
+      font-size: 8pt;
+      color: #888;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>WONG WAI HANG</h1>
+    <p class="title">Workflow Designer | AI Prototyping & No-Code Automation</p>
+    <p class="contact">
+      <span>Hong Kong</span>
+      <span>|</span>
+      <span>wongwh1015@gmail.com</span>
+      <span>|</span>
+      <span>github.com/Phaapnag</span>
+    </p>
+  </div>
+  
+  <!-- Summary -->
+  <div class="section-title">PROFESSIONAL SUMMARY</div>
+  <p class="summary">
+    Operations and education professional with 14+ years of stakeholder-facing experience, team coordination, and service delivery, now actively building practical capability in AI workflow design, no-code orchestration, and vibe coding. Hands-on experience in deploying web apps, exploring agent-style workflows, and turning real operational needs into testable digital prototypes.
+  </p>
+  
+  <!-- Technical Skills -->
+  <div class="section-title">TECHNICAL SKILLS</div>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <h4>AI & AUTOMATION</h4>
+      <p>Google AI Studio, OpenWork Agent, Telegram workflow, LLMs (Gemini, Perplexity, Grok, Qwen), n8n / Make.com</p>
+    </div>
+    <div class="skill-item">
+      <h4>LANGUAGES & FRAMEWORKS</h4>
+      <p>React, JavaScript, HTML/CSS, Basic Python</p>
+    </div>
+    <div class="skill-item">
+      <h4>WORKFLOW COMPETENCIES</h4>
+      <p>Fast prototyping, Process mapping, Conversation flow design, Workflow documentation</p>
+    </div>
+    <div class="skill-item">
+      <h4>DEV & DEPLOYMENT</h4>
+      <p>GitHub, Vercel, Netlify, Responsive Web Design</p>
+    </div>
+    <div class="skill-item">
+      <h4>KEY COMPETENCIES</h4>
+      <p>Fast prototyping, API integration, UI component development</p>
+    </div>
+  </div>
+  
+  <!-- Soft Skills -->
+  <div class="section-title">SOFT SKILLS</div>
+  <div class="soft-skills">
+    <span class="tag">Problem-solving</span>
+    <span class="tag">Fast Prototyping</span>
+    <span class="tag">Stakeholder Collaboration</span>
+    <span class="tag">Team Leadership (26-person)</span>
+    <span class="tag">Process Optimization</span>
+    <span class="tag">Project Management</span>
+    <span class="tag">Agile Mindset</span>
+    <span class="tag">Communication</span>
+  </div>
+  
+  <!-- Projects -->
+  <div class="section-title">VIBE CODING PROJECTS</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h4>OpenWork + Telegram Workflow</h4>
+      <p class="tech">OpenWork (OpenCode), Telegram, LLMs</p>
+      <p class="result">No-code workflow for daily dev tasks</p>
+    </div>
+    <div class="project-card">
+      <h4>Roster Management System</h4>
+      <p class="tech">Vibe coding, Web prototyping</p>
+      <p class="result">Operations-focused roster coordination</p>
+    </div>
+    <div class="project-card">
+      <h4>Sick Leave Arrangement AI</h4>
+      <p class="tech">Unsloth Studio, FunctionGemma</p>
+      <p class="result">Domain-specific AI for staffing</p>
+    </div>
+    <div class="project-card">
+      <h4>LangChain / LangGraph Agents</h4>
+      <p class="tech">LangChain, LangGraph</p>
+      <p class="result">Multi-agent architecture study</p>
+    </div>
+    <div class="project-card">
+      <h4>Spot the Difference Pipeline</h4>
+      <p class="tech">Midjourney, flux-schnell, n8n</p>
+      <p class="result">Creative content workflow</p>
+    </div>
+    <div class="project-card">
+      <h4>Emoji Crowd Runner</h4>
+      <p class="tech">React, Three.js, Vercel</p>
+      <p class="result">3D crowd runner game (LIVE)</p>
+    </div>
+    <div class="project-card">
+      <h4>Tradesizer</h4>
+      <p class="tech">React, Google AI Studio</p>
+      <p class="result">Position sizing calculator (LIVE)</p>
+    </div>
+    <div class="project-card">
+      <h4>Candle Catcher</h4>
+      <p class="tech">React, Google AI Studio</p>
+      <p class="result">Candle pattern identifier (LIVE)</p>
+    </div>
+  </div>
+  
+  <!-- Experience -->
+  <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+  <div class="experience-grid">
+    <div class="exp-card">
+      <h4>Legislative Council Secretariat</h4>
+      <p class="period">Aug 2011 – Dec 2025</p>
+      <ul>
+        <li>Public Information Officer (Jun 2014 – Dec 2025)</li>
+        <li>Managed Souvenir Shop operations</li>
+        <li>Led 26-person frontline team</li>
+        <li>Roster optimization (~30% reduction)</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <h4>Education Roles</h4>
+      <p class="period">2002 – 2014</p>
+      <ul>
+        <li>Educator (LegCo, 2011-2014)</li>
+        <li>Teacher (Yeo Chei Man, 2005-2011)</li>
+        <li>Graduate Master (2003-2005)</li>
+        <li>Part-time Tutor (Various)</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Education -->
+  <div class="section-title">EDUCATION</div>
+  <div class="education-grid">
+    <div class="edu-card">
+      <p class="degree">MFA (Drama & Theatre in Education)</p>
+      <p class="school">HK Academy for Performing Arts</p>
+      <p class="year">2009-2014</p>
+    </div>
+    <div class="edu-card">
+      <p class="degree">PGDipEd (Computer Studies)</p>
+      <p class="school">HK Baptist University</p>
+      <p class="year">2002-2003</p>
+    </div>
+    <div class="edu-card">
+      <p class="degree">BEng (Electronic Engineering)</p>
+      <p class="school">CUHK</p>
+      <p class="year">1998-2002</p>
+    </div>
+  </div>
+  
+  <!-- Exams -->
+  <div class="section-title">PUBLIC EXAMINATIONS</div>
+  <div class="exams">
+    <span>HKALE: 1B2C</span>
+    <span>HKCEE: 6B2C</span>
+  </div>
+  
+  <!-- Footer -->
+  <div class="footer">
+    Last Updated: April 2026
+  </div>
+</body>
+</html>
