@@ -344,7 +344,7 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>Last Updated: March 2026 | Version: Software Engineer Track</p>
+        <p>Last Updated: April 2026</p>
         <a href="/Wong_Wai_Hang_Resume.pdf" download className="download-btn">
           <Download size={18} />
           Download PDF
