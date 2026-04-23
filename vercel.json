@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/google89988b1605219f68.html", "destination": "/google89988b1605219f68.html" },
     { "source": "/portfolio.json", "destination": "/portfolio.json" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
