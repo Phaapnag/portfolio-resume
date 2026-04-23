@@ -348,10 +348,10 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <p>Last Updated: April 2026</p>
-        <a href="/Wong_Wai_Hang_Resume.pdf" download className="download-btn">
+        <button onClick={() => window.print()} className="download-btn" type="button">
           <Download size={18} />
           Download PDF
-        </a>
+        </button>
       </footer>
 
       {/* Scroll indicator */}
