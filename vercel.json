@@ -1,12 +1,6 @@
 {
-  "framework": "vite",
-  "functions": {
-    "api/portfolio.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "rewrites": [
-    { "source": "/data/portfolio", "destination": "/api/portfolio.ts" },
+    { "source": "/portfolio.json", "destination": "/portfolio.json" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
