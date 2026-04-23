@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { 
   MapPin, Mail, ExternalLink, Github, 
   Code2, Lightbulb, Rocket, Briefcase, GraduationCap,
-  ChevronDown, Download, Sparkles, Menu, X, FileText
+  ChevronDown, Download, Sparkles, Menu, X
 } from 'lucide-react'
 import { supabase, TABLES } from './supabase'
 import './App.css'
@@ -72,7 +72,8 @@ function App() {
     { id: 'experience', label: 'Experience', icon: <Briefcase size={18} /> },
     { id: 'education', label: 'Education', icon: <GraduationCap size={18} /> },
     { id: 'exams', label: 'Exams', icon: <GraduationCap size={18} /> },
-    { id: 'info', label: 'Info', icon: <FileText size={18} /> },
+    // Info section hidden from public menu - only for admin panel
+    // { id: 'info', label: 'Info', icon: <FileText size={18} /> },
   ]
 
   const scrollToSection = (id: string) => {
@@ -103,7 +104,11 @@ function App() {
     if (skillRes.data) setSkills(skillRes.data)
     if (projRes.data) setProjects(projRes.data)
     if (examsRes.data) setExams(examsRes.data)
-    if (infoRes.data) setInfo(infoRes.data)
+    if (infoRes.data) {
+      setInfo(infoRes.data)
+      // Info fetched but hidden from public UI - for admin panel use
+      // console.log('Info available:', infoRes.data)
+    }
     setLoading(false)
   }
 
@@ -317,11 +322,13 @@ function App() {
         </div>
       </section>
 
-      {/* Additional Info - Hidden from public, only for admin */}
-      {/* Admin-only section - uncomment to show in admin panel */}
-      {/* <section id="info" className="section info-section">
+      {/* Additional Info - Only show filtered items for public, hide admin items */}
+      <section id="info" className="section info-section">
+        {/* Info section hidden - only for admin panel */}
+        {/* Uncomment below to show in admin panel only */}
+        {/* {info && info.length > 0 && (
         <div className="info-grid">
-          {info.map(item => (
+          {info.filter(item => !['name', 'title', 'location', 'email', 'summary', 'expectedSalary', 'availability', 'languages'].includes(item.key)).map(item => (
             <div key={item.id} className="info-card">
               <h4>{item.key}</h4>
               <p>{item.value.split('\\n').map((line, i) => (
@@ -330,7 +337,8 @@ function App() {
             </div>
           ))}
         </div>
-      </section> */}
+        )} */}
+      </section>
 
       {/* Footer */}
       <footer className="footer">
