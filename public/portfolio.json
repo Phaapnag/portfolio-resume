@@ -3,6 +3,16 @@
   "title": "Senior Software Engineer",
   "bio": "Passionate software engineer with experience in modern web technologies, AI automation, and fast prototyping",
   
+  "info": {
+    "expectedSalary": "HK$30,000/month (negotiable)",
+    "availability": "Immediate",
+    "languages": {
+      "english": "fluent",
+      "cantonese": "native",
+      "mandarin": "conversational"
+    }
+  },
+  
   "experience": [
     {
       "company": "Legislative Council Secretariat 立法會秘書處",
