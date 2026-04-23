@@ -317,8 +317,9 @@ function App() {
         </div>
       </section>
 
-      {/* Additional Info */}
-      <section id="info" className="section info-section">
+      {/* Additional Info - Hidden from public, only for admin */}
+      {/* Admin-only section - uncomment to show in admin panel */}
+      {/* <section id="info" className="section info-section">
         <div className="info-grid">
           {info.map(item => (
             <div key={item.id} className="info-card">
@@ -329,7 +330,7 @@ function App() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="footer">
