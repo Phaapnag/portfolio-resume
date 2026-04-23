@@ -1,0 +1,27 @@
+{
+  "name": "Wong Wai Hang",
+  "title": "Software Engineer",
+  "bio": "Passionate software engineer with experience in modern web technologies",
+  "experience": [],
+  "education": [],
+  "skills": [],
+  "projects": [
+    {
+      "name": "Spot the Difference Automation",
+      "description": "Automated spot-the-difference image generator using AI",
+      "link": "https://spotdiffgen.vercel.app/"
+    },
+    {
+      "name": "Emoji Crowd Runner",
+      "description": "Web-based game built with Three.js",
+      "link": "https://emoji-crowd-runner.vercel.app"
+    },
+    {
+      "name": "踩坑工房",
+      "description": "Blog about avoiding pitfalls in tech purchases",
+      "link": "https://chapeng-studio.vercel.app"
+    }
+  ],
+  "exams": [],
+  "updated": "2026-04-22"
+}
