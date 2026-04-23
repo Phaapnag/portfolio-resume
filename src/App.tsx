@@ -67,13 +67,12 @@ function App() {
 
   const sections = [
     { id: 'summary', label: 'Summary', icon: <Lightbulb size={18} /> },
-    { id: 'skills', label: 'Skills', icon: <Code2 size={18} /> },
+    { id: 'skills', label: 'Tech Skills', icon: <Code2 size={18} /> },
+    { id: 'soft-skills', label: 'Soft Skills', icon: <Lightbulb size={18} /> },
     { id: 'projects', label: 'Projects', icon: <Rocket size={18} /> },
     { id: 'experience', label: 'Experience', icon: <Briefcase size={18} /> },
     { id: 'education', label: 'Education', icon: <GraduationCap size={18} /> },
     { id: 'exams', label: 'Exams', icon: <GraduationCap size={18} /> },
-    // Info section hidden from public menu - only for admin panel
-    // { id: 'info', label: 'Info', icon: <FileText size={18} /> },
   ]
 
   const scrollToSection = (id: string) => {
@@ -198,7 +197,7 @@ function App() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Section - Technical Skills from Supabase */}
       <section id="skills" className="section skills-section">
         <div className="section-header">
           <Code2 size={24} />
@@ -212,19 +211,23 @@ function App() {
             </div>
           ))}
         </div>
-        
-        <div className="soft-skills">
-          <h4>Soft Skills</h4>
-          <div className="skill-tags">
-            <span className="tag">Problem-solving</span>
-            <span className="tag">Fast Prototyping</span>
-            <span className="tag">Stakeholder Collaboration</span>
-            <span className="tag">Team Leadership (26-person team)</span>
-            <span className="tag">Process Optimization</span>
-            <span className="tag">Project Management</span>
-            <span className="tag">Agile Mindset</span>
-            <span className="tag">Communication</span>
-          </div>
+      </section>
+
+      {/* Soft Skills Section */}
+      <section id="soft-skills" className="section soft-skills-section">
+        <div className="section-header">
+          <Lightbulb size={24} />
+          <h2>Soft Skills</h2>
+        </div>
+        <div className="skill-tags">
+          <span className="tag">Problem-solving</span>
+          <span className="tag">Fast Prototyping</span>
+          <span className="tag">Stakeholder Collaboration</span>
+          <span className="tag">Team Leadership (26-person team)</span>
+          <span className="tag">Process Optimization</span>
+          <span className="tag">Project Management</span>
+          <span className="tag">Agile Mindset</span>
+          <span className="tag">Communication</span>
         </div>
       </section>
 
