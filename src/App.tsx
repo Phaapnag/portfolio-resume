@@ -153,12 +153,12 @@ function App() {
             <span>Open to Opportunities</span>
           </div>
           <h1>WONG WAI HANG</h1>
-          <p className="hero-subtitle">Creative Problem Solver | Software Engineer | AI-Assisted Developer</p>
+          <p className="hero-subtitle">Workflow Designer | AI Prototyping & No-Code Automation</p>
           
           <div className="hero-info">
             <div className="info-item">
               <MapPin size={18} />
-              <span>Tseung Kwan O, Hong Kong</span>
+              <span>Hong Kong</span>
             </div>
             <div className="info-item">
               <Mail size={18} />
@@ -186,12 +186,14 @@ function App() {
         </div>
         <div className="summary-card">
           <p>
-            Career-changing creative problem solver with electronic engineering foundation, 
-            <strong> 14+ years operations leadership</strong>, and 
-            <strong> rapid AI-assisted development skills</strong>. 
-            Built React web apps deployed on Vercel using Google AI Studio and OpenWork Agent, 
-            transforming complex trading workflows into intuitive tools in days. 
-            Eager to apply systems thinking and fast prototyping to full-stack development challenges.
+            Operations and education professional with 
+            <strong> 14+ years of stakeholder-facing experience</strong>, 
+            <strong> team coordination</strong>, and 
+            <strong> service delivery</strong>, now actively building practical capability in 
+            <strong>AI workflow design</strong>, <strong>no-code orchestration</strong>, and 
+            <strong>vibe coding</strong>. 
+            Hands-on experience in deploying web apps, exploring agent-style workflows, and 
+            turning real operational needs into testable digital prototypes.
           </p>
         </div>
       </section>
