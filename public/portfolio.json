@@ -88,6 +88,51 @@
   
   "projects": [
     {
+      "name": "OpenWork + Telegram Workflow",
+      "status": "Active Use",
+      "type": "No-Code AI Workflow Application",
+      "url": "",
+      "description": "Practical no-code workflow experimentation using OpenWork agent with Telegram integration, focused on agent interactions, task coordination, and chat-based multi-step workflow support.",
+      "tech": "OpenWork (OpenCode), Telegram, LLMs (Gemini, Qwen)",
+      "workflow": "Focused on prompt structure, task coordination, and making multi-step interactions more usable in practical scenarios. Currently supporting daily development and research tasks."
+    },
+    {
+      "name": "Roster Management System",
+      "status": "In Progress",
+      "type": "Workflow Prototype (Vibe Coding)",
+      "url": "",
+      "description": "An operations-focused prototype for roster coordination, designed around shift planning, leave handling, and manager usability.",
+      "tech": "Vibe coding, Web app prototyping",
+      "workflow": "Inspired by real frontline team management experience, with emphasis on operational logic, process clarity, and practical adoption."
+    },
+    {
+      "name": "Sick Leave Arrangement AI",
+      "status": "Learning Project",
+      "type": "Domain-Specific AI Assistant",
+      "url": "",
+      "description": "A domain-focused AI assistant exploring how a specialised LLM can support routine operational decision-making. Training FunctionGemma (mobile-optimized LLM) via Unsloth Studio for on-device staffing coordination.",
+      "tech": "Unsloth Studio, FunctionGemma, Mobile-oriented workflow thinking",
+      "workflow": "Exploring how a specialised assistant can support routine operational decision-making through targeted behaviour and workflow-aware responses."
+    },
+    {
+      "name": "LangChain / LangGraph Agent Profiles",
+      "status": "Early Exploration",
+      "type": "Multi-Agent Architecture Study",
+      "url": "",
+      "description": "Experimenting with assigning different roles and responsibilities to different AI agents within a structured workflow.",
+      "tech": "LangChain, LangGraph",
+      "workflow": "Learning how agent orchestration, role separation, state flow, and routing can be applied to practical task execution."
+    },
+    {
+      "name": "Emoji Crowd Runner",
+      "status": "Live",
+      "type": "Web Game",
+      "url": "https://emoji-crowd-runner.vercel.app",
+      "description": "3D crowd runner game with obstacle navigation, gate power-ups, and battle system. Built following a formal 12-day development roadmap.",
+      "tech": "React, Three.js, Vercel",
+      "workflow": "End-to-end game development demonstrating understanding of game mechanics, collision detection, particle effects, and deployment pipeline."
+    },
+    {
       "name": "Tradesizer",
       "status": "Live",
       "type": "Web App",
@@ -104,47 +149,6 @@
       "description": "A visual helper for identifying candle patterns with an emphasis on usability and responsive interface design.",
       "tech": "React, Google AI Studio, Vercel",
       "workflow": "Used AI for layout ideas, code stubs, and visual direction, followed by manual refinement for responsiveness and clarity."
-    },
-    {
-      "name": "Emoji Crowd Runner",
-      "status": "Live",
-      "type": "Web Game",
-      "url": "https://emoji-crowd-runner.vercel.app",
-      "description": "3D crowd runner game with obstacle navigation, gate power-ups, and battle system. Built following a formal 12-day development roadmap.",
-      "tech": "React, Three.js, Vercel",
-      "workflow": "End-to-end game development demonstrating understanding of game mechanics, collision detection, particle effects, and deployment pipeline."
-    },
-    {
-      "name": "Roster Management System",
-      "status": "In Progress",
-      "type": "Workflow Prototype (Vibe Coding)",
-      "description": "An operations-focused prototype for roster coordination, designed around shift planning, leave handling, and manager usability.",
-      "tech": "Vibe coding, Web app prototyping",
-      "workflow": "Inspired by real frontline team management experience, with emphasis on operational logic, process clarity, and practical adoption."
-    },
-    {
-      "name": "Sick Leave Arrangement AI",
-      "status": "Learning Project",
-      "type": "Domain-Specific AI Assistant",
-      "description": "A domain-focused AI assistant exploring how a specialised LLM can support routine operational decision-making. Training FunctionGemma (mobile-optimized LLM) via Unsloth Studio for on-device staffing coordination.",
-      "tech": "Unsloth Studio, FunctionGemma, Mobile-oriented workflow thinking",
-      "workflow": "Exploring how a specialised assistant can support routine operational decision-making through targeted behaviour and workflow-aware responses."
-    },
-    {
-      "name": "OpenWork + Telegram Workflow",
-      "status": "Active Use",
-      "type": "No-Code AI Workflow Application",
-      "description": "Practical no-code workflow experimentation using OpenWork agent with Telegram integration, focused on agent interactions, task coordination, and chat-based multi-step workflow support.",
-      "tech": "OpenWork (OpenCode), Telegram, LLMs (Gemini, Qwen)",
-      "workflow": "Focused on prompt structure, task coordination, and making multi-step interactions more usable in practical scenarios. Currently supporting daily development and research tasks."
-    },
-    {
-      "name": "LangChain / LangGraph Agent Profiles",
-      "status": "Early Exploration",
-      "type": "Multi-Agent Architecture Study",
-      "description": "Experimenting with assigning different roles and responsibilities to different AI agents within a structured workflow.",
-      "tech": "LangChain, LangGraph",
-      "workflow": "Learning how agent orchestration, role separation, state flow, and routing can be applied to practical task execution."
     }
   ],
   
