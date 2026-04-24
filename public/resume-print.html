@@ -229,12 +229,45 @@
     
     /* Footer */
     .footer {
-      margin-top: 8px;
-      padding-top: 6px;
+      margin-top: 10px;
+      padding-top: 8px;
       border-top: 1px solid var(--light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .qr-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    
+    .qr-code {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .qr-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .qr-label {
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+    
+    .qr-url {
+      font-size: 8pt;
+      color: var(--muted);
+    }
+    
+    .last-updated {
       font-size: 10pt;
       color: var(--muted);
-      text-align: center;
     }
   </style>
 </head>
@@ -396,9 +429,16 @@
     <span>HKCEE: 6B2C</span>
   </div>
   
-  <!-- Footer -->
+  <!-- Footer with QR code -->
   <div class="footer">
-    Last Updated: April 2026
+    <div class="qr-wrapper">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://portfolio-resume-gilt.vercel.app" alt="QR Code" class="qr-code">
+      <div class="qr-text">
+        <span class="qr-label">Portfolio Online</span>
+        <span class="qr-url">portfolio-resume-gilt.vercel.app</span>
+      </div>
+    </div>
+    <p class="last-updated">Last Updated: April 2026</p>
   </div>
 </body>
 </html>
