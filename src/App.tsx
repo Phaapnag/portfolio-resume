@@ -356,7 +356,6 @@ function App() {
           <span className="download-hint">Print → Save as PDF</span>
         </div>
       </footer>
-      </footer>
 
       {/* Scroll indicator */}
       <div className="scroll-indicator">
