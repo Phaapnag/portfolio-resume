@@ -348,10 +348,14 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <p>Last Updated: April 2026</p>
-        <a href="/resume-print.html" target="_blank" className="download-btn">
-          <Download size={18} />
-          Download PDF
-        </a>
+        <div className="download-wrapper">
+          <a href="/resume-print.html" target="_blank" className="download-btn">
+            <Download size={18} />
+            Download PDF
+          </a>
+          <span className="download-hint">Print → Save as PDF</span>
+        </div>
+      </footer>
       </footer>
 
       {/* Scroll indicator */}
